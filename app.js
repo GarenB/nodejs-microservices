@@ -2,6 +2,7 @@
 
 // Import required modules
 const express = require("express");
+const dotenv = require("dotenv").config({ silent: true });
 
 const accountRoute = require("./lib/routes/account");
 const defaultRouter = require("./lib/routers/default");

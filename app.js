@@ -1,6 +1,3 @@
-// index.js
-
-// Import required modules
 const express = require("express");
 const dotenv = require("dotenv").config({ silent: true });
 
@@ -16,7 +13,6 @@ app.use("/account", accountRoute(defaultRouter()));
 
 errorHandlerMiddleware(app);
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

@@ -2,3 +2,8 @@
 
 # dependencies
 /node_modules
+/mysql-data
+/.env
+/docker-compose.yml
+/.gitignore
+/to-do.txt

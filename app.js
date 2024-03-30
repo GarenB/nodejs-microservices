@@ -6,6 +6,7 @@ const accountRoute = require("./lib/routes/account");
 const usersRoute = require("./lib/routes/users");
 
 const defaultRouter = require("./lib/routers/default");
+const AuthenticatedRouter = require("./lib/routers/authenticated");
 const errorHandlerMiddleware = require("./lib/errors/errorHandlerMiddleware");
 
 // Create an Express application
@@ -14,7 +15,7 @@ const port = process.env.PORT || 3000;
 
 // routes
 app.use("/account", accountRoute(defaultRouter()));
-app.use("/users", usersRoute(defaultRouter()));
+app.use("/users", usersRoute(AuthenticatedRouter()));
 
 errorHandlerMiddleware(app);
 

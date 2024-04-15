@@ -9,9 +9,14 @@ const DefaultRouter = require("./lib/routers/default");
 const AuthenticatedRouter = require("./lib/routers/authenticated");
 const errorHandlerMiddleware = require("./lib/errors/errorHandlerMiddleware");
 
+const { connect } = require("./lib/db");
+
 // Create an Express application
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Create mongodb connection
+connect();
 
 // routes
 app.use("/account", accountRoute(DefaultRouter()));

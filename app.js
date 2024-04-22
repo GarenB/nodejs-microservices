@@ -4,6 +4,7 @@ const dotenv = require("dotenv").config({ silent: true });
 // routes imports
 const accountRoute = require("./lib/routes/account");
 const usersRoute = require("./lib/routes/users");
+const tasksRoute = require("./lib/routes/tasks");
 
 const DefaultRouter = require("./lib/routers/default");
 const AuthenticatedRouter = require("./lib/routers/authenticated");
@@ -21,6 +22,7 @@ connect();
 // routes
 app.use("/account", accountRoute(DefaultRouter()));
 app.use("/users", usersRoute(AuthenticatedRouter()));
+app.use("/tasks", tasksRoute(AuthenticatedRouter()));
 
 errorHandlerMiddleware(app);
 

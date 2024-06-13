@@ -5,6 +5,7 @@ const dotenv = require("dotenv").config({ silent: true });
 const accountRoute = require("./lib/routes/account");
 const usersRoute = require("./lib/routes/users");
 const tasksRoute = require("./lib/routes/tasks");
+const draftsRoute = require("./lib/routes/drafts");
 
 const DefaultRouter = require("./lib/routers/default");
 const AuthenticatedRouter = require("./lib/routers/authenticated");
@@ -23,6 +24,7 @@ connect();
 app.use("/account", accountRoute(DefaultRouter()));
 app.use("/users", usersRoute(AuthenticatedRouter()));
 app.use("/tasks", tasksRoute(AuthenticatedRouter()));
+app.use("/drafts", draftsRoute(AuthenticatedRouter()));
 
 errorHandlerMiddleware(app);
 
